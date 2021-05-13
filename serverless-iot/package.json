@@ -2,8 +2,9 @@
     "name": "serverless-iot",
     "main": "index.js",
     "dependencies": {
-        "@pulumi/pulumi": "^3.0.0",
         "@pulumi/aws": "^4.0.0",
-        "@pulumi/awsx": "^0.30.0"
+        "@pulumi/awsx": "^0.30.0",
+        "@pulumi/pulumi": "^3.0.0",
+        "aws-sdk": "^2.906.0"
     }
 }

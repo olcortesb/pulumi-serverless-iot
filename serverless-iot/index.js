@@ -7,7 +7,7 @@ const service = require("./app/services")
 // Create an AWS resource (S3 Bucket)
 const bucket = new aws.s3.Bucket("serverless-iot-1");
 
-
+// Create AWS resource  (ApiGateway)
 const endpoint = new awsx.apigateway.API("serverlessiot" , {
     routes: [{
             path: "/data",
