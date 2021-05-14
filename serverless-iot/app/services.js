@@ -5,8 +5,8 @@ async function savedata(event) {
     console.log(event.body);
 
     // decode the body of the event
-    //const payloadBuffer = new Buffer(event.body, 'base64')
-    //const payload = payloadBuffer.toString('ascii')
+    const payloadBuffer = new Buffer(event.body, 'base64')
+    const payload = payloadBuffer.toString('ascii')
 
     const REGION = "us-west-2";
 
@@ -19,7 +19,7 @@ async function savedata(event) {
     const putParams = {
         Bucket: 'serverless-iot-1',
         Key: name,
-        Body: 'hola'
+        Body: payload
     }
 
     try {
