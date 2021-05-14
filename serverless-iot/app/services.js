@@ -1,31 +1,39 @@
-var AWS = require('aws-sdk');
-var s3 = new AWS.S3();
+//const AWS = require('aws-sdk');
+const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3")
 
-async function savedata(event){
+async function savedata(event) {
     console.log(event.body);
 
-    const payloa = event.body.toString('asccii');
+    // decode the body of the event
+    //const payloadBuffer = new Buffer(event.body, 'base64')
+    //const payload = payloadBuffer.toString('ascii')
 
-    const putParam = {
-        Bucket: 'serverless-iot-1-8b49e8e',
-        key: `${new Date().getTime()}.json`,
-        body: payloa
+    const REGION = "us-west-2";
+
+    const s3 = new S3Client({ region: REGION });
+
+    var name = `${new Date().getTime()}.json`;
+
+    console.log(name);
+
+    const putParams = {
+        Bucket: 'serverless-iot-1',
+        Key: name,
+        Body: 'hola'
     }
 
-    await new Promise((resolve,reject)=>{
-        s3.putObject(putParam, function(err,data){
-            if(err){
-                reject(err);
-            } else  {
-                resolve(data);
-            }
-        })
-    })
+    try {
+        const data = await s3.send(new PutObjectCommand(putParams));
+        console.log("Successfully uploaded object: ");
+    } catch (err) {
+        console.log("Error from s3 save", err);
+    }
+
 
     return {
         statusCode: 200,
-        body: "OK"
+        body: "ok"
     }
 }
 
-module.exports = {savedata}
+module.exports = { savedata }
