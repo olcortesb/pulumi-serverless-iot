@@ -20,9 +20,9 @@ serverless-iot
 │   package.json
 │   pulumi.yaml (Configuracion basica Pulumi)
 │
-└───app
-│   │   services.js (AWS Lambda)
-│   |   helper.js
+└─── app
+│    │   services.js (AWS Lambda)
+│    |   helper.js
 
 ```
 ### Arquitectura ⛺ 
@@ -95,7 +95,7 @@ Oscar Cortes Bracho -  @olcortesb
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia GNU v3 - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto está bajo la Licencia MIT License - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
 ## Expresiones de Gratitud 🎁
 
