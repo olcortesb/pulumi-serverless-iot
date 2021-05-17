@@ -73,12 +73,12 @@ $ npm test
 ## Despliegue 📦
 
 ```
-$ cd pokeapi
+$ cd serverless-iot
 $ pulumi up
 ```
 Borrado Stacks
 ```
-$ cd pokeapi
+$ cd serverless-iot
 $ pulumi destroy
 ```
 ## Construido con 🛠️
@@ -91,9 +91,7 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Autor ✒️
 
-Oscar Cortes 
-
-@olcortesb
+Oscar Cortes Bracho -  @olcortesb
 
 ## Licencia 📄
 
