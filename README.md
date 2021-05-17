@@ -22,7 +22,7 @@ serverless-iot
 │
 └─── app
 │    │   services.js (AWS Lambda)
-│    |   helper.js
+│    |   helper.js (AWS Lambda)
 
 ```
 ### Arquitectura ⛺ 
