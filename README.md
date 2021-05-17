@@ -2,6 +2,10 @@
 
 Ejemplo de uso de Lambdas para el procesamiento y pre-procesamiento de datos enviados por dispositivos Iot
 
+## Disclaimer ⚠️	🚩
+
+No utilizar en produccion sin agregar seguridad a las APIs, este ejemplo es solamente a modo de uso didactico. 
+
 ## Comenzando 🚀
 
 - Desplegado en AWS
