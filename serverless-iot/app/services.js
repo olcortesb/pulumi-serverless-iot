@@ -1,24 +1,17 @@
 //const AWS = require('aws-sdk');
 const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3")
+const REGION = "us-west-2";
 
 async function savedata(event) {
-    console.log(event.body);
-
     // decode the body of the event
-    const payloadBuffer = new Buffer(event.body, 'base64')
+    const payloadBuffer = new Buffer.from(event.body, 'base64')
     const payload = payloadBuffer.toString('ascii')
-
-    const REGION = "us-west-2";
-
+    
     const s3 = new S3Client({ region: REGION });
-
-    var name = `${new Date().getTime()}.json`;
-
-    console.log(name);
 
     const putParams = {
         Bucket: 'serverless-iot-1',
-        Key: name,
+        Key: `${new Date().getTime()}.json`,
         Body: payload
     }
 
@@ -28,7 +21,6 @@ async function savedata(event) {
     } catch (err) {
         console.log("Error from s3 save", err);
     }
-
 
     return {
         statusCode: 200,
